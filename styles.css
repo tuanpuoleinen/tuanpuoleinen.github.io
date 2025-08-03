@@ -863,6 +863,7 @@ section .contact h2 {
 
 form {
     display: flex;
+    flex-direction: row;
     font-size: 15px;
     margin-top: 15px;
 }
