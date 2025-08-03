@@ -863,7 +863,6 @@ section .contact h2 {
 
 form {
     display: flex;
-    flex-direction: column;
     font-size: 15px;
     margin-top: 15px;
 }
@@ -1075,7 +1074,7 @@ footer {
 
 .gridlayout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 20px 10px;
     justify-content: space-around;
