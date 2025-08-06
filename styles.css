@@ -2,12 +2,16 @@
     --color-light: #F4F1DE;
     --color-dark: #3D405B;
     --color-dark-lighter: #5a5e86;
+    --color-dark-lighter-2: #969ac4;
     --color-accent-1: #E07A5F;
     --color-accent-1-darker: #c04625;
+    --color-accent-1-lighter: #fbb6a3;
     --color-accent-2: #F2CC8F;
     --color-accent-2-darker: #e7a02e;
+    --color-accent-2-lighter: #f8ddb3;
     --color-accent-3: #81B29A;
     --color-accent-3-darker: #54896f;
+    --color-accent-3-lighter: #aad6c1;
 
     --bg-color: #eee;
     --text-color: #333;
@@ -83,6 +87,7 @@ header h2 {
     header {
         background: rgba(242, 204, 143, 0.4);
     }
+
     header h2 {
         margin-left: 90px;
         font-style: italic;
@@ -599,10 +604,87 @@ section .expertise .softwareandtools ul {
 section .expertise .softwareandtools ul li {
     display: inline-block;
     color: var(--bg-color);
-    background-color: var(--color-dark-lighter);
+    background-color: var(--color-dark);
     padding: 5px 10px;
     border-radius: 8px;
     margin: 5px 1px;
+}
+
+
+.expertise-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+    margin-top: 40px;
+}
+
+.expertise-cards .expertise-card {
+    border-radius: 20px;
+    padding: 20px 20px 75px 20px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 15px;
+}
+
+.expertise-cards .expertise-card h4 {
+    font-size: 26px;
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+.expertise-cards .expertise-card.one {
+    background: var(--color-accent-3-lighter);
+}
+
+.expertise-cards .expertise-card.two {
+    background: var(--color-accent-1-lighter);
+}
+
+.expertise-cards .expertise-card.three {
+    background: var(--color-accent-2-lighter);
+}
+
+.expertise-cards .expertise-card.four {
+    background: var(--color-dark-lighter-2);
+}
+
+.expertise-cards .expertise-card i.fa-solid {
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.expertise-cards .expertise-card.one i.fa-solid {
+    color: var(--color-accent-3);
+}
+
+.expertise-cards .expertise-card.two i.fa-solid {
+    color: var(--color-accent-1);
+}
+
+.expertise-cards .expertise-card.three i.fa-solid {
+    color: var(--color-accent-2);
+}
+
+.expertise-cards .expertise-card.four i.fa-solid {
+    color: var(--color-dark-lighter);
+}
+
+@media (max-width: 1000px) {
+    .expertise-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .expertise-cards {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
 }
 
 /* WORKS */
