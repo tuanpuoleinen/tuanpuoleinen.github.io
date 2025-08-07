@@ -1237,3 +1237,31 @@ footer {
     top: calc(120% + var(--arrow-size));
     bottom: auto;
 }
+
+/* 404 PAGE */
+
+.container404 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.container404 h1 {
+    color: var(--color-accent-1);
+    font-weight: normal;
+    font-size: 150px;
+    font-family: "Rubik Glitch", system-ui;
+}
+
+.container404 h2 {
+    margin-bottom: 20px;
+}
+
+.container404 p {
+    margin-bottom: 30px;
+}
