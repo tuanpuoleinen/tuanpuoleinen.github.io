@@ -278,6 +278,18 @@ p>a:active {
     margin: 10px;
 }
 
+@media screen and (max-width: 700px) {
+    .double-button-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .double-button-wrapper .button-container {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+}
+
 .social_buttons_tua a {
     background-color: var(--color-btn);
     border: 1px solid transparent;
@@ -1151,7 +1163,8 @@ button.button[type=submit] {
 footer {
     text-align: center;
     padding: 40px 20px;
-    color: var(--color-accent-1);
+    color: var(--bg-color);
+    background: var(--color-dark);
 }
 
 /* GRIDS */
