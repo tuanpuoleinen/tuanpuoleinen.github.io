@@ -409,6 +409,12 @@ a.emaillink {
         white-space: nowrap;
     }
 
+    .nav button {
+        outline: none;
+        background: none;
+        border: none;
+    }
+
     .nav .icon {
         cursor: pointer;
         z-index: 1001;
@@ -970,10 +976,15 @@ form textarea {
     font-size: 15px;
 }
 
-form label[for="would_you_like_me_to_reply"] {
+form legend {
     font-weight: 600;
     letter-spacing: 0.4px;
     color: var(--color-accent-1);
+    margin: 10px 0;
+}
+
+form fieldset {
+    border: none;
     margin: 10px 0;
 }
 
@@ -1277,68 +1288,4 @@ footer {
 
 .container404 p {
     margin-bottom: 30px;
-}
-
-/* SKILL BARS */
-
-.container-skillbar {
-    width: 100%;
-    padding-top: 30px;
-    height: auto;
-    overflow: none;
-}
-
-.skillbar {
-    position: relative;
-    display: block;
-    margin-bottom: 15px;
-    width: 100%;
-    background: #efefef;
-    height: 30px;
-    border-radius: 6px;
-    -webkit-transition: 0.4s linear;
-    transition: 0.4s linear;
-    -webkit-transition-property: width, background-color;
-    transition-property: width, background-color;
-}
-
-.skillbar-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 110px;
-    font-weight: 600;
-    font-size: 13px;
-    font-family: var(--font1);
-    color: #fff;
-    background: #6adcfa;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.skillbar-title span {
-    display: block;
-    background: rgba(0, 0, 0, 0.15);
-    padding: 0 20px;
-    height: 30px;
-    line-height: 30px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.skillbar-bar {
-    height: 30px;
-    width: 0px;
-    border-radius: 6px;
-}
-
-.skill-bar-percent {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    font-size: 11px;
-    height: 30px;
-    line-height: 30px;
-    color: #ffffff;
-    color: rgba(0, 0, 0, 0.5);
 }
