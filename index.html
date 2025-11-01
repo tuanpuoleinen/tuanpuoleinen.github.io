@@ -80,6 +80,33 @@
   <section id="expertise">
     <div class="expertise">
       <h2>Looking to acquire my expertise?</h2>
+
+      <!-- <div class="container-skillbar">
+        <div class="skillbar clearfix " data-percent="95%">
+          <div class="skillbar-title" style="background: #DD1E2F;"><span>HTML5</span></div>
+          <div class="skillbar-bar" style="background: #DD1E2F;"></div>
+          <div class="skill-bar-percent">95%</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="90%">
+          <div class="skillbar-title" style="background: #EBB035;"><span>CSS3</span></div>
+          <div class="skillbar-bar" style="background: #EBB035;"></div>
+          <div class="skill-bar-percent">90%</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="70%">
+          <div class="skillbar-title" style="background: #06A2CB;"><span>Photoshop</span></div>
+          <div class="skillbar-bar" style="background: #06A2CB;"></div>
+          <div class="skill-bar-percent">70%</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="80%">
+          <div class="skillbar-title" style="background: #218559;"><span>Photoshop</span></div>
+          <div class="skillbar-bar" style="background: #218559;"></div>
+          <div class="skill-bar-percent">80%</div>
+        </div>
+      </div> -->
+
       <div class="expertise-cards">
         <div class="expertise-card one">
           <h4>UI/UX Design</h4>
@@ -122,7 +149,7 @@
         <div class="tl-container">
           <ul style="list-style-type: none;">
             <li>
-              <div class="tl-timestamp">02/2021 - 01/2023</div>
+              <div class="tl-timestamp">2/2021 - 1/2023</div>
               <div class="tl-title">Mobile Application Front-End Developer</div>
               <div class="tl-subtitle">SuperApp Oy, Helsinki</div>
               <div class="tl-description">
@@ -139,7 +166,7 @@
               </div>
             </li>
             <li>
-              <div class="tl-timestamp">26.3. – 25.5.2018</div>
+              <div class="tl-timestamp">26.3. - 25.5.2018</div>
               <div class="tl-title">IT-Support Trainee</div>
               <div class="tl-subtitle">The English School, Helsinki</div>
               <div class="tl-description">
@@ -602,6 +629,16 @@
           });
         });
       }
+    });
+
+    // skillbars
+
+    jQuery(document).ready(function () {
+      jQuery('.skillbar').each(function () {
+        jQuery(this).find('.skillbar-bar').animate({
+          width: jQuery(this).attr('data-percent')
+        }, 3000);
+      });
     });
 
   </script>
