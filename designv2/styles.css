@@ -58,7 +58,13 @@ section.revealed {
 }
 
 header {
-    text-align: center;
+    position: fixed;
+    background: #ddd;
+    height: 100%;
+    width: 35%;
+    z-index: 1;
+
+    /* text-align: center;
     padding: 115px 20px 60px 20px;
     box-sizing: border-box;
     height: 400px;
@@ -67,7 +73,7 @@ header {
     justify-content: center;
     background-image: url(/images/tuanylund_banner.png);
     background-size: cover;
-    background-position: top;
+    background-position: top; */
 }
 
 header h1 {
@@ -89,13 +95,15 @@ header h2 {
     header {
         background: rgba(242, 204, 143, 0.4);
     }
+}
 
-    header h2 {
-        margin-left: 90px;
-        font-style: italic;
-        letter-spacing: 0.5px;
-        font-weight: 400;
-        color: var(--color-dark)
+@media screen and (max-width: 1200px) {
+    header {
+        position: relative;
+        background: #ddd;
+        height: 100%;
+        width: 35%;
+        z-index: 1;
     }
 }
 
@@ -356,17 +364,16 @@ a.emaillink {
 @media screen and (min-width: 800px) {
     .nav {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         padding: 15px 0;
         background-color: var(--color-accent-1);
-        position: fixed;
-        width: 100%;
         z-index: 999;
     }
 
     .nav a:not(.icon) {
-        display: inline-block;
+        display: block;
         color: var(--bg-color);
         text-align: center;
         text-decoration: none;
@@ -479,19 +486,22 @@ a.emaillink {
 
 /* SECTIONS */
 
-section .intro,
-section .about,
-section .expertise,
-section .works,
-section .experience,
-section .education,
-section .contact {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1000px;
+section {
+    margin: 0 0 0 35%;
+    width: 65%;
     box-sizing: border-box;
-    padding: 80px 20px;
+    padding: 80px 60px;
 }
+
+@media screen and (max-width: 1200px) {
+    section {
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 80px 60px;
+    }
+}
+
 
 /* ABOUT */
 
@@ -505,6 +515,7 @@ section .about {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: #ccc;
 }
 
 section .about h2 {
@@ -556,24 +567,18 @@ section .about-description {
 
 /* EXPERTISES */
 
-section .expertise {
-    max-width: 1000px;
-}
-
 .expertise-list {
-    max-width: 1000px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 40px;
     grid-row-gap: 0px;
-    font-size: 14px;
     line-height: 1.8;
     margin: 40px auto;
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .expertise-list {
         grid-template-columns: 1fr;
         width: 100%;
@@ -583,129 +588,25 @@ section .expertise {
 }
 
 .expertise-list h4 {
-    line-height: 3;
+    line-height: 4;
 }
 
-.expertise-item.one i.fa-solid {
-    color: var(--color-accent-1);
-    font-size: 50px;
-    width: 100%;
+.expertise-item i.fa-solid {
+    color: var(--text-color);
+    font-size: 30px;
+    line-height: 70px;
+    background-color: #ccc;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     transition: all 0.1s ease-in-out;
 }
 
-.expertise-item.two i.fa-solid {
-    color: var(--color-accent-2-darker);
-    font-size: 50px;
-    width: 100%;
-    transition: all 0.1s ease-in-out;
-}
-
-.expertise-item.three i.fa-solid {
-    color: var(--color-accent-3-darker);
-    font-size: 50px;
-    width: 100%;
-    transition: all 0.1s ease-in-out;
-}
-
-.expertise-item.one:hover i.fa-solid,
-.expertise-item.two:hover i.fa-solid,
-.expertise-item.three:hover i.fa-solid {
+.expertise-item:hover i.fa-solid {
     transform: scale(1.2);
     transition: all 0.1s ease-in-out;
 }
 
-section .expertise .softwareandtools ul {
-    list-style: none;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 90%;
-}
-
-section .expertise .softwareandtools ul li {
-    display: inline-block;
-    color: var(--bg-color);
-    background-color: var(--color-dark);
-    padding: 5px 10px;
-    border-radius: 0px;
-    margin: 5px 1px;
-}
-
-
-.expertise-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 0px;
-    margin-top: 40px;
-}
-
-.expertise-cards .expertise-card {
-    border-radius: 0px;
-    padding: 20px 20px 75px 20px;
-    box-sizing: border-box;
-    position: relative;
-    font-size: 15px;
-}
-
-.expertise-cards .expertise-card h4 {
-    font-size: 26px;
-    text-align: left;
-    margin: 0 0 10px 0;
-}
-
-.expertise-cards .expertise-card.one {
-    background: var(--color-accent-3-lighter);
-}
-
-.expertise-cards .expertise-card.two {
-    background: var(--color-accent-1-lighter);
-}
-
-.expertise-cards .expertise-card.three {
-    background: var(--color-accent-2-lighter);
-}
-
-.expertise-cards .expertise-card.four {
-    background: var(--color-dark-lighter-2);
-}
-
-.expertise-cards .expertise-card i.fa-solid {
-    font-size: 40px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-
-.expertise-cards .expertise-card.one i.fa-solid {
-    color: var(--color-accent-3);
-}
-
-.expertise-cards .expertise-card.two i.fa-solid {
-    color: var(--color-accent-1);
-}
-
-.expertise-cards .expertise-card.three i.fa-solid {
-    color: var(--color-accent-2);
-}
-
-.expertise-cards .expertise-card.four i.fa-solid {
-    color: var(--color-dark-lighter);
-}
-
-@media (max-width: 1000px) {
-    .expertise-cards {
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 20px;
-    }
-}
-
-@media (max-width: 700px) {
-    .expertise-cards {
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
-    }
-}
 
 /* WORKS */
 
@@ -827,7 +728,7 @@ section .works h2 {
     display: block;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1400px) {
     #gallery {
         grid-template-columns: 1fr 1fr;
         max-width: 100%;
