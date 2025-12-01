@@ -19,10 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -32,10 +29,10 @@
 <body>
 
   <header id="intro">
-    <h1>Tua Nylund</h1>
     <div class="portrait">
-      <img src="https://placehold.co/100x100/EEE/31343C?font=source-sans-pro&text=IMAGE" alt="Portrait of Tua Nylund" />
+      <img src="/designv2/images/tua_2.jpg" alt="Portrait of Tua Nylund" />
     </div>
+    <h2>Tua Nylund</h2>
     <div class="about-description">
       <p>I am a developer/designer with a passion for creating visually engaging digital experiences. Driven by
         usability, my areas of expertise reflect my interest in assuring quality in all stages of projects I'm
@@ -43,7 +40,7 @@
     </div>
     <nav class="nav" id="topNav" aria-label="Main navigation">
       <div class="nav-links">
-        <a href="#expertise" class="nav-home">About</a>
+        <a href="#intro" class="nav-home">About</a>
         <a href="#works">Works</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
@@ -54,6 +51,17 @@
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
     </nav>
+    <div class="social_buttons_tua_nav">
+      <a data-tooltip="Email" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
+        aria-label="Email"><i class="fa-solid fa-at" aria-hidden="true"></i></a>
+      <a data-tooltip="Linktree" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
+        aria-label="Linktree"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+      <a data-tooltip="LinkedIn" data-tooltip-location="top" target="_blank"
+        href="https://www.linkedin.com/in/tuanylund/" role="top" aria-label="LinkedIn"><i
+          class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      <a data-tooltip="GitHub" data-tooltip-location="top" target="_blank" href="https://github.com/tuanpuoleinen"
+        role="button" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+    </div>
   </header>
 
   <section id="expertise">
@@ -96,16 +104,16 @@
       <h2>My Works</h2>
 
       <div class="controls">
-        <button class="control active" type="button" data-filter="all">All</button>
+        <button class="control active" type="button" data-filter=".featured">Featured</button>
+        <button class="control" type="button" data-filter="all">All</button>
         <button class="control" type="button" data-filter=".uiux">UI/UX</button>
-        <button class="control" type="button" data-filter=".graphicdesign">Graphic Design</button>
         <button class="control" type="button" data-filter=".gamedesign">Game Design</button>
-        <button class="control" type="button" data-filter=".narrativedesign">Narrative Design</button>
         <button class="control" type="button" data-filter=".artillustration">Art/Illustration</button>
+        <button class="control" type="button" data-filter=".programming">Programming</button>
       </div>
 
       <div class="gallery" id="gallery" aria-live="polite">
-        <div class="gallery-item mix gamedesign narrativedesign" data-title="Blooming Love"
+        <div class="gallery-item mix gamedesign" data-title="Blooming Love"
           data-description="Blooming Love - A Symbiotic Dating Simulator - is a game in which you are a lost bee-person looking for the way back to your home hive. On your journey, you meet beautiful flowerkin with unique personalities and attractive visuals. In the demo of Blooming Love, you can meet each of the six flowerkin and even try to woo them in a minigame. The game is a student game project from 2023 by students of JAMK University of Applied Sciences. With my role as a narrative designer and -producer, my concrete tasks included character and storyline concepting and narrative script production."
           data-cover="images/portfolio/gallery/bloominglove_cover.jpg"
           data-link="images/portfolio/gallery/bloominglove_cover.jpg" data-tags="Game Design, Narrative Design">
@@ -116,7 +124,7 @@
           </div>
         </div>
 
-        <div class="gallery-item mix graphicdesign uiux" data-title="Eats Easy"
+        <div class="gallery-item mix uiux featured" data-title="Eats Easy"
           data-description="A food delivery app UI/UX concept focusing on user-friendly interaction and clean visual design."
           data-cover="images/portfolio/gallery/eatseasy_cover.jpg"
           data-link="images/portfolio/gallery/eatseasy_cover.jpg" data-tags="UI/UX Design, Graphic Design">
@@ -138,7 +146,7 @@
           </div>
         </div>
 
-        <div class="gallery-item mix gamedesign uiux narrativedesign" data-title="Lunar Woods"
+        <div class="gallery-item mix gamedesign uiux featured" data-title="Lunar Woods"
           data-description="Lunar Woods is a story-driven 3rd-person adventure game based around the mystery of a forest and its magical sickness. Lunar Woods is a university game development project with a demo prototype finished in 2024. My personal contributions to the project included tasks in game design, narrative design as well as UI design and implementation."
           data-cover="images/portfolio/gallery/lunarwoods_cover.jpg"
           data-link="https://www.youtube.com/watch?v=4O5j_7ZY_gw"
@@ -161,7 +169,7 @@
           </div>
         </div>
 
-        <div class="gallery-item mix uiux" data-title="Sushi Escape"
+        <div class="gallery-item mix uiux featured" data-title="Sushi Escape"
           data-description="Sushi Escape is a student game project with a demo build completed in five days. The game is a 3rd-person environmental puzzle escape, where the player is an unlucky octopus trying to escape the restaurant before being turned into sushi. My tasks in this project in our team included UX and UI design and scripting in Unity as well as readymade audio asset research and imports."
           data-cover="images/portfolio/gallery/sushiescape_cover.jpg"
           data-link="images/portfolio/gallery/sushiescape_cover.jpg" data-tags="UI/UX Design">
@@ -194,7 +202,7 @@
           </div>
         </div>
 
-        <div class="gallery-item mix uiux graphicdesign" data-title="Pokémon UI Design Concept"
+        <div class="gallery-item mix uiux" data-title="Pokémon UI Design Concept"
           data-description="Game UI Design for university course Basics for 2D Game Art. Pokémon sprites are the official artwork of Ken Sugimori for Pokémon."
           data-cover="images/portfolio/gallery/pokemonUI_cover.png"
           data-link="images/portfolio/gallery/pokemonUI_cover.png" data-tags="UI/UX Design, Graphic Design">
@@ -394,9 +402,6 @@
     <p>&copy; Tua Nylund 2025</p>
   </footer>
 
-  <button class="scroll-button" id="scrollToggle" aria-label="Scroll to the bottom"><i
-      class="fas fa-chevron-down"></i></button>
-
   <div class="modal" id="workModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -444,44 +449,6 @@
         }
       });
     });
-
-    // Scroll button
-    const scrollBtn = document.getElementById('scrollToggle');
-    const icon = scrollBtn ? scrollBtn.querySelector('i') : null;
-
-    if (scrollBtn && icon) {
-      scrollBtn.addEventListener('click', () => {
-        const scrollTop = window.scrollY;
-        const about = document.getElementById('about');
-        if (!about) return;
-        const aboutTop = about.offsetTop - 50;
-
-        if (scrollTop < aboutTop - 20) {
-          window.scrollTo({ top: aboutTop, behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const about = document.getElementById('about');
-        if (!about) return;
-        const aboutTop = about.offsetTop - 50;
-
-        if (scrollTop < aboutTop - 20) {
-          icon.className = 'fas fa-chevron-down';
-          scrollBtn.classList.add('show');
-        } else {
-          icon.className = 'fas fa-chevron-up';
-          scrollBtn.classList.add('show');
-        }
-      });
-
-      window.addEventListener('load', () => {
-        scrollBtn.classList.add('show');
-      });
-    }
 
     // Modals
     const modal = document.getElementById('workModal');
@@ -563,6 +530,9 @@
       const containerEl = document.querySelector('#gallery');
       if (containerEl && window.mixitup) {
         var mixer = mixitup(containerEl, {
+          load: {
+            filter: '.featured'
+          },
           animation: {
             enable: true,
             effects: 'fade translateZ(-100px)',
@@ -582,17 +552,6 @@
         });
       }
     });
-
-    // skillbars
-
-    jQuery(document).ready(function () {
-      jQuery('.skillbar').each(function () {
-        jQuery(this).find('.skillbar-bar').animate({
-          width: jQuery(this).attr('data-percent')
-        }, 3000);
-      });
-    });
-
   </script>
 
 </body>

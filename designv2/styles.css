@@ -20,6 +20,7 @@
     --reveal-translate: 30px;
     --font1: "Source Sans 3", sans-serif;
     --font2: "Raleway", sans-serif;
+    --font-code: "Source Code Pro", monospace;
 
     --color-btn: var(--color-accent-1);
     --color-btn-hover: var(--color-dark);
@@ -41,8 +42,13 @@ body {
     scroll-behavior: smooth;
 }
 
+/* SECTIONS */
+
 section {
-    margin: 0 auto;
+    margin: 0 0 0 35%;
+    width: 65%;
+    box-sizing: border-box;
+    padding: 80px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,60 +57,19 @@ section {
     transition: all 0.8s ease-in-out;
 }
 
+@media screen and (max-width: 1200px) {
+    section {
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 80px 60px;
+    }
+}
+
 section.revealed {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.2s;
-}
-
-header {
-    position: fixed;
-    background: #ddd;
-    height: 100%;
-    width: 35%;
-    z-index: 1;
-
-    /* text-align: center;
-    padding: 115px 20px 60px 20px;
-    box-sizing: border-box;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url(/images/tuanylund_banner.png);
-    background-size: cover;
-    background-position: top; */
-}
-
-header h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-header h2 {
-    margin-left: 250px;
-    font-style: italic;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    color: var(--color-dark);
-}
-
-@media screen and (max-width: 700px) {
-    header {
-        background: rgba(242, 204, 143, 0.4);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    header {
-        position: relative;
-        background: #ddd;
-        height: 100%;
-        width: 35%;
-        z-index: 1;
-    }
 }
 
 /* TEXT CONTENT STYLES */
@@ -168,12 +133,22 @@ p>a:active {
     transition: all 0.3s ease-in-out;
 }
 
+code {
+    background: #f7f7f7;
+    border-radius: 0.35em;
+    border: solid 2px #efefef;
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+}
+
 .button {
     display: block;
     border-radius: 0px;
-    font-family: var(--font1);
-    font-size: 16px;
-    font-weight: 700;
+    font-family: var(--font2);
+    font-size: 1em;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
@@ -224,11 +199,6 @@ p>a:active {
 .button.variant {
     display: block;
     border-radius: 0px;
-    font-family: var(--font1);
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
     letter-spacing: 2px;
     color: var(--color-accent-1);
     padding: 15px 30px;
@@ -329,65 +299,102 @@ a.emaillink {
     font-weight: 600;
 }
 
-.scroll-button {
+/* HEADER */
+
+header {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--color-dark);
-    color: var(--bg-color);
-    text-align: center;
+    background: #555;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 35%;
+    box-sizing: border-box;
+    padding: 0 5% 0 5%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: left;
+}
+
+header h2 {
+    font-family: var(--font-code);
+    font-size: 3rem;
+    line-height: 1.9;
+    font-weight: 900;
+    text-transform: lowercase;
+    color: #fff;
+    text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        margin-top: 58px;
+        padding: 4em 10% 4em 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    header h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+header .portrait img {
+    width: 9em;
+    height: 9em;
     border-radius: 50%;
-    cursor: pointer;
+}
+
+header .about-description {
+    font-size: 1.12em;
+}
+
+header .social_buttons_tua_nav a {
+    color: #fff;
     font-size: 20px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    transition: background 0.3s, opacity 0.5s ease;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    border: none;
 }
 
-.scroll-button.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.scroll-button:hover {
-    background: var(--color-accent-1);
-
+header .social_buttons_tua_nav a:hover {
+    color: #000;
 }
 
 /* NAVIGATION */
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
     .nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 0;
-        background-color: var(--color-accent-1);
-        z-index: 999;
+        width: 100%;
     }
 
     .nav a:not(.icon) {
-        display: block;
+        display: flex;
+        flex-flow: column;
         color: var(--bg-color);
-        text-align: center;
+        text-align: left;
         text-decoration: none;
         text-transform: uppercase;
         font-family: var(--font2);
-        font-size: 15px;
-        font-weight: 400;
+        font-size: 1.3rem;
+        font-weight: 500;
         letter-spacing: 1px;
-        margin: 0 20px;
+        padding: 12px;
+        text-decoration: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     }
 
     .nav a:not(.icon):hover {
         color: var(--color-accent-2);
         transition: all 0.3s ease-in-out;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+        padding-left: 20px;
     }
 
     .nav .icon {
@@ -395,7 +402,7 @@ a.emaillink {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     .nav {
         position: fixed;
         top: 0;
@@ -484,87 +491,6 @@ a.emaillink {
     }
 }
 
-/* SECTIONS */
-
-section {
-    margin: 0 0 0 35%;
-    width: 65%;
-    box-sizing: border-box;
-    padding: 80px 60px;
-}
-
-@media screen and (max-width: 1200px) {
-    section {
-        margin: 0;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 80px 60px;
-    }
-}
-
-
-/* ABOUT */
-
-#about {
-    background-color: var(--color-dark);
-}
-
-section .about {
-    color: var(--bg-color);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background: #ccc;
-}
-
-section .about h2 {
-    color: var(--bg-color);
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-section .about .portrait {
-    width: 50%;
-    text-align: center;
-}
-
-section .about .portrait img {
-    width: 60%;
-    border-radius: 0px;
-}
-
-section .about-description {
-    width: 50%;
-    line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-    section .about {
-        color: var(--bg-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    section .about .portrait,
-    section .about .about-description {
-        width: 100%;
-    }
-
-    section .about h2 {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    section .about .portrait img {
-        width: 60%;
-        border-radius: 0px;
-    }
-}
-
 /* EXPERTISES */
 
 .expertise-list {
@@ -635,9 +561,9 @@ section .works h2 {
 
 .controls button {
     display: block;
-    font-family: var(--font1);
-    font-weight: 700;
-    font-size: 15px;
+    font-family: var(--font2);
+    font-size: 0.9em;
+    font-weight: 500;
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
@@ -645,7 +571,7 @@ section .works h2 {
     color: var(--bg-color);
     background-color: var(--color-dark-lighter);
     border: 1px solid transparent;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 0px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -665,7 +591,7 @@ section .works h2 {
     width: 100%;
     max-width: 9000px;
     margin: 0 auto;
-    min-height: 600px;
+    min-height: 200px;
     transition: height 0.4s ease;
     position: relative;
 }
@@ -805,7 +731,7 @@ section .works h2 {
     margin-bottom: 1em;
     text-align: left;
     font-family: var(--font1);
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 600;
     color: var(--color-dark-lighter);
     text-transform: uppercase;
@@ -815,7 +741,7 @@ section .works h2 {
     position: relative;
     margin-bottom: 10px;
     color: var(--color-accent-1);
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 600;
 }
 
@@ -848,7 +774,7 @@ p.study-extra>i.fa-solid {
 p.study-extra span,
 p.study-extra span a {
     color: var(--color-accent-3-darker);
-    font-size: 14px;
+    font-size: 0.9em;
 }
 
 /* CONTACTS */
@@ -1049,7 +975,7 @@ button.button[type=submit] {
     padding: 4px 8px;
     border-radius: 0px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--bg-color);
@@ -1119,18 +1045,23 @@ footer {
 
 [data-tooltip]:before {
     content: attr(data-tooltip);
-    padding: 0px 10px;
-    min-width: 50px;
+    padding: 8px 10px;
+    /* min-width: 50px; */
     max-width: 300px;
     width: max-content;
     width: -moz-max-content;
     border-radius: 0px;
-    font-size: 15px;
+    font-family: var(--font2);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
     background-color: var(--color-dark);
     color: var(--bg-color);
+    text-transform: uppercase;
     text-align: center;
     white-space: pre-wrap;
     transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5);
+    border-radius: 20px;
 }
 
 [data-tooltip]:after {
