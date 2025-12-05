@@ -320,12 +320,36 @@ header {
 
 header h2 {
     font-family: var(--font-code);
-    font-size: 3rem;
-    line-height: 1.9;
+    font-size: 2rem;
     font-weight: 900;
     text-transform: lowercase;
     color: #fff;
     text-align: left;
+}
+
+header .portrait img {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+}
+
+header .about-description {
+    font-size: 1em;
+    margin: 15px 0 15px 0;
+}
+
+header .social_buttons_tua_nav {
+    margin: 20px 0 0 0;
+}
+
+header .social_buttons_tua_nav a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+header .social_buttons_tua_nav a:hover {
+    color: #000;
 }
 
 @media screen and (max-width: 1200px) {
@@ -348,25 +372,6 @@ header h2 {
     }
 }
 
-header .portrait img {
-    width: 9em;
-    height: 9em;
-    border-radius: 50%;
-}
-
-header .about-description {
-    font-size: 1.12em;
-}
-
-header .social_buttons_tua_nav a {
-    color: #fff;
-    font-size: 20px;
-}
-
-header .social_buttons_tua_nav a:hover {
-    color: #000;
-}
-
 /* NAVIGATION */
 
 @media screen and (min-width: 1200px) {
@@ -382,7 +387,7 @@ header .social_buttons_tua_nav a:hover {
         text-decoration: none;
         text-transform: uppercase;
         font-family: var(--font2);
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-weight: 500;
         letter-spacing: 1px;
         padding: 12px;
@@ -412,7 +417,7 @@ header .social_buttons_tua_nav a:hover {
         z-index: 999;
         padding: 15px 20px;
         display: flex;
-        align-items: center;
+        justify-content: end;
     }
 
     .nav-home {
@@ -444,7 +449,7 @@ header .social_buttons_tua_nav a:hover {
 
     .nav-links {
         position: fixed;
-        top: 63px;
+        top: 50px;
         left: 0;
         width: 100%;
         background: var(--color-accent-1);
@@ -454,6 +459,7 @@ header .social_buttons_tua_nav a:hover {
         flex-direction: column;
         box-sizing: border-box;
         z-index: 998;
+        text-transform: uppercase;
     }
 
     .nav-links a {
@@ -466,6 +472,7 @@ header .social_buttons_tua_nav a:hover {
         font-size: 24px;
         transition: color 0.3s ease-in-out;
         padding: 10px 20px;
+        margin-bottom: 15px;
     }
 
     .nav-links a:hover,
@@ -656,7 +663,7 @@ section .works h2 {
 
 @media (max-width: 1400px) {
     #gallery {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         max-width: 100%;
         min-height: 600px;
         transition: height 0.4s ease;
