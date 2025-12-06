@@ -1,12 +1,12 @@
 :root {
     --color-light: #F4F1DE;
-    --color-dark: #3D405B;
-    --color-dark-lighter: #5a5e86;
-    --color-dark-lighter-2: #969ac4;
-    --color-accent-1: #E07A5F;
-    --color-accent-1-darker: #c04625;
+    --color-dark: #7d749f;
+    --color-dark-lighter: #A8A6CE;
+    --color-dark-lighter-2: #C9C6E3;
+    --color-accent-1: #333;
+    --color-accent-1-darker: #111;
     --color-accent-1-lighter: #fbb6a3;
-    --color-accent-2: #F2CC8F;
+    --color-accent-2: #ccc;
     --color-accent-2-darker: #e7a02e;
     --color-accent-2-lighter: #f8ddb3;
     --color-accent-3: #81B29A;
@@ -116,7 +116,7 @@ a:active {
 }
 
 p>a {
-    color: var(--color-dark-lighter);
+    color: var(--color-dark);
     background-image: linear-gradient(var(--color-accent-1));
     background-size: 0% 0.1em;
     background-position-y: 100%;
@@ -303,7 +303,8 @@ a.emaillink {
 
 header {
     position: fixed;
-    background: #555;
+    background-color: #555;
+    background-image: url(/designv2/images/side-bg2.png);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -369,6 +370,12 @@ header .social_buttons_tua_nav a:hover {
     header h2 {
         font-size: 3rem;
         text-align: center;
+    }
+
+    header .portrait img {
+        width: 9em;
+        height: 9em;
+        border-radius: 50%;
     }
 }
 
@@ -636,7 +643,7 @@ section .works h2 {
     width: 100%;
     opacity: 0;
     transition: 0.3s ease;
-    background-color: rgba(90, 94, 134, 0.9);
+    background-color: rgba(10, 10, 10, 0.8);
     border-radius: 0px;
 }
 
@@ -735,21 +742,22 @@ section .works h2 {
 }
 
 .tl-subtitle {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     text-align: left;
     font-family: var(--font1);
     font-size: 0.9em;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--color-dark-lighter);
     text-transform: uppercase;
 }
 
 .tl-container ul li .tl-timestamp {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: var(--color-accent-1);
-    font-size: 0.9em;
-    font-weight: 600;
+    font-family: var(--font-code);
+    font-weight: 800;
+    line-height: 0.75;
 }
 
 .tl-container ul li .tl-description {
@@ -765,7 +773,7 @@ section .works h2 {
     line-height: 28px;
     padding-right: 10px;
     color: var(--color-accent-1);
-    width: 35px;
+    
 }
 
 p.study-extra {
@@ -1062,7 +1070,7 @@ footer {
     font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.2;
-    background-color: var(--color-dark);
+    background-color: var(--text-color);
     color: var(--bg-color);
     text-transform: uppercase;
     text-align: center;
