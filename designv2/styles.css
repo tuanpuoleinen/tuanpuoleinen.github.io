@@ -1,17 +1,17 @@
 :root {
     --color-light: #F4F1DE;
-    --color-dark: #7d749f;
-    --color-dark-lighter: #A8A6CE;
-    --color-dark-lighter-2: #C9C6E3;
-    --color-accent-1: #333;
-    --color-accent-1-darker: #111;
-    --color-accent-1-lighter: #fbb6a3;
-    --color-accent-2: #ccc;
-    --color-accent-2-darker: #e7a02e;
-    --color-accent-2-lighter: #f8ddb3;
-    --color-accent-3: #d4837d;
-    --color-accent-3-darker: #c76a64;
-    --color-accent-3-lighter: #F3B1AC;
+    --color-dark: #342e44;
+    --color-dark-rgb: 52, 46, 68;
+    --color-dark-lighter: #6b5b7c;
+    --color-dark-lighter-rgb: 107, 91, 124;
+    --color-dark-lighter-2: #9788a7;
+    --color-dark-lighter-2-rgb: 151, 136, 167;
+    --color-accent-1: #d4837d;
+    --color-accent-1-rgb: 212, 131, 125;
+    --color-accent-1-darker: #c76a64;
+    --color-accent-1-darker-rgb: 199, 106, 100;
+    --color-accent-1-lighter: #F3B1AC;
+    --color-accent-1-lighter-rgb: 243, 177, 172;
 
     --bg-color: #eee;
     --text-color: #333;
@@ -25,7 +25,7 @@
     --color-btn: var(--color-accent-1);
     --color-btn-hover: var(--color-dark);
     --color-btn-text: var(--bg-color);
-    --color-btn-text-hover: var(--color-accent-2);
+    --color-btn-text-hover: var(--color-accent-1);
 }
 
 * {
@@ -143,7 +143,7 @@ code {
     padding: 0.25em 0.65em;
 }
 
-.button {
+.button, .button:focus, .button:active {
     display: block;
     border-radius: 0px;
     font-family: var(--font2);
@@ -152,96 +152,45 @@ code {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    color: var(--color-btn-text);
+    color: var(--bg-color);
+    background-color: var(--color-dark-lighter);
+    border: 1px solid var(--color-dark-lighter);
     padding: 15px 30px;
     transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
     z-index: 1;
     text-align: center;
-    border: none;
     cursor: pointer;
-}
-
-.button:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-accent-1);
-    border-radius: 0px;
-    z-index: -2;
-}
-
-.button:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: var(--color-btn-hover);
-    transition: all 0.3s ease-in-out;
-    border-radius: 0px;
-    z-index: -1;
 }
 
 .button:hover {
-    color: var(--color-btn-text);
+    color: var(--bg-color);
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    transition: all 0.3s ease-in-out;
 }
 
-.button:hover:before {
-    width: 100%;
-}
-
-.button.variant {
+.button.variant, .button.variant:focus, .button.variant:active  {
     display: block;
     border-radius: 0px;
     letter-spacing: 2px;
-    color: var(--color-accent-1);
+    color: var(--color-accent-1-darker);
+    background-color: transparent;
+    border: 1px solid var(--color-accent-1-darker);
     padding: 15px 30px;
     transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
     z-index: 1;
     text-align: center;
-    border: none;
     cursor: pointer;
-}
-
-.button.variant:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-accent-2);
-    border-radius: 0px;
-    z-index: -2;
-}
-
-.button.variant:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: var(--color-accent-3);
-    transition: all 0.3s ease-in-out;
-    border-radius: 0px;
-    z-index: -1;
 }
 
 .button.variant:hover {
     color: var(--bg-color);
-}
-
-.button.variant:hover:before {
-    width: 100%;
+    background-color: var(--color-accent-1-darker);
+    transition: all 0.3s ease-in-out;
 }
 
 .double-button-wrapper {
@@ -271,7 +220,7 @@ code {
 }
 
 .social_buttons_tua a {
-    background-color: var(--color-btn);
+    background-color: var(--color-dark-lighter);
     border: 1px solid transparent;
     color: var(--color-btn-text);
     text-align: center;
@@ -304,10 +253,8 @@ a.emaillink {
 header {
     position: fixed;
     background-color: #555;
-    background-image: url('images/MJ_Title_screen.png');
+    background-image: url(/designv2/images/sidenav-bg3.jpg);
     background-size: cover;
-    background-position: 10%;
-    background-attachment: fixed;
     justify-content: start;
     padding-top: 150px;
     background-size: cover;
@@ -370,6 +317,7 @@ header .social_buttons_tua_nav a:hover {
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        background-position: 50% 40%;
     }
 
     header h2 {
@@ -425,7 +373,7 @@ header .social_buttons_tua_nav a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        background: var(--color-accent-1);
+        background: var(--color-dark);
         z-index: 999;
         padding: 15px 20px;
         display: flex;
@@ -464,7 +412,7 @@ header .social_buttons_tua_nav a:hover {
         top: 50px;
         left: 0;
         width: 100%;
-        background: var(--color-accent-1);
+        background: var(--color-dark);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
@@ -489,7 +437,7 @@ header .social_buttons_tua_nav a:hover {
 
     .nav-links a:hover,
     a.nav-home:hover {
-        color: var(--color-accent-2);
+        color: var(--color-accent-1-lighter);
     }
 
     .nav.responsive .nav-links {
@@ -506,7 +454,7 @@ header .social_buttons_tua_nav a:hover {
     }
 
     .nav .icon:hover i {
-        color: var(--color-accent-2);
+        color: var(--color-accent-1-lighter);
     }
 }
 
@@ -518,10 +466,10 @@ header .social_buttons_tua_nav a:hover {
     grid-template-rows: 1fr;
     grid-column-gap: 40px;
     grid-row-gap: 0px;
-    line-height: 1.4;
+    line-height: 1.6;
     margin: 40px auto;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 @media (max-width: 900px) {
@@ -535,13 +483,14 @@ header .social_buttons_tua_nav a:hover {
 
 .expertise-list h4 {
     line-height: 4;
+    font-size: 1.4em;
+    line-height: 3.4;
 }
 
 .expertise-item i.fa-solid {
-    color: var(--text-color);
-    font-size: 30px;
+    color: var(--color-accent-1);
+    font-size: 50px;
     line-height: 70px;
-    background-color: #ccc;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -589,17 +538,22 @@ section .works h2 {
     text-decoration: none;
     letter-spacing: 1px;
     color: var(--bg-color);
-    background-color: var(--color-dark-lighter);
-    border: 1px solid transparent;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark-lighter);
     padding: 8px 14px;
     border-radius: 0px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
+.controls button:hover {
+    background-color: rgba(var(--color-dark-lighter-rgb), 0.3);
+}
+
 .controls button.active {
     color: var(--color-btn-text);
-    background-color: var(--color-accent-1);
+    background-color: var(--color-dark-lighter);
+    border: 1px solid var(--color-dark-lighter);
     transition: all 0.3s ease-in-out;
 }
 
@@ -720,7 +674,7 @@ section .works h2 {
     margin-left: 1em;
     padding: 0 0 50px 30px;
     min-height: 100px;
-    border-left: 1px solid var(--text-color-lighter);
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .tl-container ul li:last-child {
@@ -733,7 +687,7 @@ section .works h2 {
     left: -0.4em;
     content: " ";
     border-radius: 100%;
-    background: var(--color-dark);
+    background: var(--color-accent-1-darker);
     height: 13px;
     width: 13px;
 }
@@ -751,16 +705,16 @@ section .works h2 {
     margin-bottom: 0.5em;
     text-align: left;
     font-family: var(--font1);
-    font-size: 0.9em;
-    font-weight: 800;
-    color: var(--color-dark);
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--text-color-lighter);
     text-transform: uppercase;
 }
 
 .tl-container ul li .tl-timestamp {
     position: relative;
     margin-bottom: 20px;
-    color: var(--color-dark);
+    color: var(--color-accent-1-darker);
     font-family: var(--font-code);
     font-weight: 800;
     line-height: 0.75;
@@ -773,29 +727,18 @@ section .works h2 {
     color: var(--text-color);
 }
 
-.tl-container p i.fa-solid {
-    float: left;
-    font-size: 18px;
-    line-height: 28px;
-    padding-right: 10px;
-    color: var(--color-accent-1);
-
-}
-
 p.study-extra {
-    color: var(--color-accent-3-darker);
+    color: var(--color-dark-lighter);
+    font-style: italic;
 }
 
-p.study-extra>i.fa-solid {
-    font-size: 24px;
-    padding-right: 10px;
-    color: var(--color-accent-3-darker);
+p.study-extra span, p.study-extra a {
+    color: var(--color-dark-lighter);
+    font-style: italic;
 }
 
-p.study-extra span,
-p.study-extra span a {
-    color: var(--color-accent-3-darker);
-    font-size: 0.9em;
+p.study-extra i {
+    padding-right: 5px;
 }
 
 /* CONTACTS */
@@ -832,7 +775,7 @@ form textarea {
 
 form legend {
     font-weight: 600;
-    color: var(--color-accent-1);
+    color: var(--color-accent-1-darker);
     margin: 10px 0;
 }
 
@@ -845,7 +788,6 @@ form input::placeholder,
 form textarea::placeholder {
     font-weight: 400;
     opacity: 1;
-    color: var(--color-accent-1);
 }
 
 form input[type=text],
@@ -856,7 +798,7 @@ form textarea {
     margin: 0 0 10px 0;
     background: #fff;
     border: none;
-    border: 2px solid var(--color-accent-2);
+    border: 1px solid var(--color-dark-lighter-2);
     border-radius: 0px;
     box-sizing: border-box;
 }
@@ -864,7 +806,7 @@ form textarea {
 form input[type=text]:focus-visible,
 form input[type=email]:focus-visible,
 form textarea:focus-visible {
-    border: 2px solid var(--color-accent-3);
+    border: 1px solid var(--color-accent-1-darker);
     outline: none;
 }
 
@@ -890,20 +832,20 @@ form textarea:focus-visible {
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     background-color: #fff;
     border-radius: 50%;
-    border: 2px solid var(--color-accent-2);
+    border: 1px solid var(--color-accent-1-darker);
 }
 
 .checkmark-container:hover input~.checkmark {
-    background-color: var(--color-accent-2);
+    background-color: var(--color-accent-1-darker);
 }
 
 .checkmark-container input:checked~.checkmark {
-    background-color: var(--color-accent-3);
-    border: 2px solid var(--color-accent-3);
+    background-color: var(--color-accent-1-darker);
+    border: 2px solid var(--color-accent-1-darker);
 }
 
 .checkmark:after {
@@ -917,10 +859,10 @@ form textarea:focus-visible {
 }
 
 .checkmark-container .checkmark:after {
-    top: 6px;
-    left: 6px;
-    width: 9px;
-    height: 9px;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #fff;
 }
@@ -1078,13 +1020,12 @@ footer {
     font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.2;
-    background-color: var(--text-color);
+    background-color: var(--color-dark-lighter);
     color: var(--bg-color);
     text-transform: uppercase;
     text-align: center;
     white-space: pre-wrap;
     transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5);
-    border-radius: 20px;
 }
 
 [data-tooltip]:after {
