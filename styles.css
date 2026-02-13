@@ -458,6 +458,48 @@ header .social_buttons_tua_nav a:hover {
     }
 }
 
+/* PORTFOLIO ENTRIES HEADERS */
+
+#about.themushroomjournal {
+    background-image: url('/portfolioentries/images/themushroomjournal_large.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+.themushroomjournal > .about {
+    background-color: rgba(10, 10, 10, 0.6);
+    box-sizing: border-box;
+    padding: 40px;
+    color: #fff;
+}
+
+.portrait.themushroomjournal img {
+    width: 150px;
+    height: auto;
+    border-radius: 0px;
+    margin: 0 auto;
+}
+
+.textfloatimage h3 {
+    margin-bottom: 20px;
+}
+
+.textfloatimage p {
+    margin: 0 40px 0 0;
+}
+
+.textfloatimage a img {
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+.textfloatimage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+
 /* EXPERTISES */
 
 .expertise-list {

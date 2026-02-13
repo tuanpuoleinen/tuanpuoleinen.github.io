@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tua Nylund</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-  <link rel="stylesheet" type="text/css" href="/design_portfolioentries/styles.css" />
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -31,33 +31,48 @@
 </head>
 
 <body>
-  <nav class="nav" id="topNav" aria-label="Main navigation">
-    <a href="#about" class="nav-home">About</a>
-    <div class="nav-links">
-      <a href="#expertise">My roles</a>
-      <a href="#experience">UX</a>
-      <a href="#education">Business</a>
-      <a href="#works">Programming</a>
-      <a href="#contact">Get the game</a>
+  <header id="intro">
+    <div class="portrait themushroomjournal">
+      <img src="/portfolioentries/images/themushroomjournal_logo.png" alt="Portrait of Tua Nylund" />
     </div>
-    <button href="javascript:void(0);" class="icon" aria-label="Open menu" aria-expanded="false"
-      aria-controls="nav-links" onclick="respNav()">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-  </nav>
+    <div class="about-description">
 
-  <section id="about">
-    <div class="about">
-      <div class="portrait">
-        <img src="images/tua.jpg" alt="Portrait of Tua Nylund" />
+    </div>
+    <nav class="nav" id="topNav" aria-label="Main navigation">
+      <div class="nav-links">
+        <a href="#intro" class="nav-home">Game synopsis</a>
+        <a href="#expertise">My contributions</a>
+        <a href="#experience">UX Wireframes</a>
+        <a href="#education">Business & pitch</a>
+        <a href="#works">Programming</a>
+        <a href="#contact">Get the game</a>
       </div>
+      <button href="javascript:void(0);" class="icon" aria-label="Open menu" aria-expanded="false"
+        aria-controls="nav-links" onclick="respNav()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+    <!-- <div class="social_buttons_tua_nav">
+      <a data-tooltip="Email" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
+        aria-label="Email"><i class="fa-solid fa-at" aria-hidden="true"></i></a>
+      <a data-tooltip="Linktree" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
+        aria-label="Linktree"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+      <a data-tooltip="LinkedIn" data-tooltip-location="top" target="_blank"
+        href="https://www.linkedin.com/in/tuanylund/" role="top" aria-label="LinkedIn"><i
+          class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      <a data-tooltip="GitHub" data-tooltip-location="top" target="_blank" href="https://github.com/tuanpuoleinen"
+        role="button" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+    </div> -->
+  </header>
+
+  <section id="about" class="themushroomjournal">
+    <div class="about">
       <div class="about-description">
-        <h2>About Me</h2>
-        <p>I am a developer/designer with a passion for creating visually engaging digital experiences. Driven by
-          usability, my areas of expertise reflect my interest in assuring quality in all stages of projects I'm
-          involved in.</p>
-        <div class="button-container" style="margin: 30px 0 0 0;"><a href="CV_Tua_Nylund_WEB.pdf" target="_blank"
-            class="button variant">View my CV</a>
+        <h2 style="color: #fff; margin: 30px 0;"></h2>
+        <p style="font-weight: 300; font-size: 1.1em;">The Mushroom Journal is a single-player 2D game about collecting
+          and documenting mushrooms.</p>
+        <div class="button-container" style="margin: 30px 0 0 0;"><a href="#contact" target="_blank"
+            class="button variant">Get the game <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -65,32 +80,38 @@
 
   <section id="expertise">
     <div class="expertise">
-      <h2>My Roles in the Project</h2>
+      <h2>My Contributions</h2>
 
-      <div class="expertise-cards">
-        <div class="expertise-card one">
+      <div class="expertise-list">
+        <div class="expertise-item">
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+          <h4>Product Owner</h4>
+          <p>I was responsible for defining the product vision, managing the product backlog, and ensuring the product
+            met user needs.</p>
+        </div>
+        <div class="expertise-item">
+          <i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i>
           <h4>Concepting</h4>
           <p>I created the core concept of the game based on my own personal experiences and interests in nature and
             storytelling.</p>
-          <i class="fa-solid fa-wand-sparkles"></i>
         </div>
-        <div class="expertise-card two">
+        <div class="expertise-item">
+          <i class="fa-solid fa-object-group" aria-hidden="true"></i>
           <h4>UX Wireframing</h4>
           <p>Helping the UI designer, I designed the initial UX wireframe for the main guidebook feature of the game.
           </p>
-          <i class="fa-solid fa-object-group"></i>
         </div>
-        <div class="expertise-card three">
+        <div class="expertise-item">
+          <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
           <h4>Programming</h4>
           <p>I was the lead programmer for the core gameplay systems and UI components of the game.</p>
-          <i class="fa-solid fa-code-branch"></i>
         </div>
-        <div class="expertise-card four">
+        <div class="expertise-item">
+          <i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
           <h4>Business</h4>
           <p>I was responsible for the business development, pitching events and creating pitch decks for different
             audiences.
           </p>
-          <i class="fa-solid fa-person-chalkboard"></i>
         </div>
       </div>
     </div>
@@ -101,21 +122,21 @@
       <h2>UX Wireframing</h2>
       <div class="textfloatimage">
         <div>
-          <h4 style="margin-top: 0;">Modality</h4>
+          <h3>Modality</h3>
           <p>I designed the wireframe with the intention to keep most elements grouped together, making the design
             modal, meaning it is easier to cherry-pick parts of the design and move them around as groups for different
             iterations of the design.</p>
-          <h4>Consistency</h4>
+          <h3>Consistency</h3>
           <p>Applying the Gestalt principle of cohesion, I made sure that all UI elements in the wireframe followed a
             consistent design language, using the same spacing, typography and visual hierarchy in each respective
             element group.</p>
-          <h4>Readability</h4>
+          <h3>Readability</h3>
           <p>I ensured that all text in the wireframe was readable and legible, using appropriate font sizes and
             contrast ratios.</p>
         </div>
-        <div><a href="/design_portfolioentries/images/mushroomjournal_UXwireframe.png" target="_blank"
+        <div><a href="/portfolioentries/images/mushroomjournal_UXwireframe.png" target="_blank"
             data-tooltip="Click to enlarge!" data-tooltip-location="bottom"><img
-              src="/design_portfolioentries/images/mushroomjournal_UXwireframe.png"
+              src="/portfolioentries/images/mushroomjournal_UXwireframe.png" width="400px"
               alt="UX wireframe of the main guidebook feature of the game" /></a></div>
       </div>
     </div>
@@ -124,10 +145,14 @@
   <section id="education">
     <div class="education">
       <h2>Business & Marketing</h2>
-      <p style="margin: 15px 0;">As part of the development team, I was responsible for the business development, pitching events and creating
+      <p style="margin: 15px 0;">As part of the development team, I was responsible for the business development,
+        pitching events and creating
         pitch decks for different audiences. In this role, I learned the importance of benchmarking, market research and
         user feedback in shaping the direction of a project.</p>
-        <p style="margin: 15px 0;">While it was difficult to balance the needs of different stakeholders - the school project needs and the commercial needs of a potential publisher - I learned how to effectively communicate and negotiate with different audiences. A true help for this part of my learning journey was the pitching and business development sessions held by Dmytro Zhovtobryukh.</p>
+      <p style="margin: 15px 0;">While it was difficult to balance the needs of different stakeholders - the school
+        project needs and the commercial needs of a potential publisher - I learned how to effectively communicate and
+        negotiate with different audiences. A true help for this part of my learning journey was the pitching and
+        business development sessions held by Dmytro Zhovtobryukh.</p>
       <h3>Final Pitch Deck</h3>
       <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
@@ -161,8 +186,8 @@
               class="fa-brands fa-steam"></i></a>
         </div>
       </div>
-      <div style="width: 300px; margin: 0 auto;"><img src="/design_portfolioentries/images/mageberry_logosmall.png"
-          width="300px"></div>
+      <div style="width: 300px; margin: 0 auto;"><img src="/portfolioentries/images/logosmaller.png"
+          alt="The Mushroom Journal logo" width="300px"></div>
 
     </div>
   </section>
