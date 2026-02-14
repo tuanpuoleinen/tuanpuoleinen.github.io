@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tua Nylund</title>
+  <title>The Mushroom Journal - Tua Nylund</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.png">
   <link rel="stylesheet" type="text/css" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-  <meta name="title" content="Tua Nylund - Portfolio">
+  <meta name="title" content="The Mushroom Journal - Tua Nylund">
   <meta name="description"
     content="Explore the creative portfolio and professional resume of Tua Nylund, a Junior Developer and Visual Designer from Jyväskylä, Finland.">
   <meta name="keywords"
-    content="portfolio, tua, nylund, tua nylund, bba, bachelor, game developer, game designer, game production, game, video game, art, graphics, UI, UX, user experience, interface, designer, frontend developer, frontend, developer">
+    content="portfolio, tua, nylund, the mushroom journal, tua nylund, bba, bachelor, game developer, game designer, game production, game, video game, art, graphics, UI, UX, user experience, interface, designer, frontend developer, frontend, developer">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="English">
@@ -30,17 +30,19 @@
   <meta property="og:image:height" content="628" />
 </head>
 
-<body>
-  <header id="intro">
+<body class="themushroomjournal">
+  <header id="intro" class="themushroomjournal">
     <div class="portrait themushroomjournal">
-      <img src="/portfolioentries/images/themushroomjournal_logo.png" alt="Portrait of Tua Nylund" />
+      <img src="/portfolioentries/images/themushroomjournal_logo.png" alt="The Mushroom Journal logo" />
     </div>
     <div class="about-description">
-
+      <p>The Mushroom Journal is a cozy single-player game about collecting and documenting mushrooms in an original-art
+        pixel environment inspired by the Finnish nature. Created as a professional project during my Game Production
+        studies at JAMK University of Applied Sciences.</p>
     </div>
     <nav class="nav" id="topNav" aria-label="Main navigation">
       <div class="nav-links">
-        <a href="#intro" class="nav-home">Game synopsis</a>
+        <a href="#intro" class="nav-home">Game overview</a>
         <a href="#expertise">My contributions</a>
         <a href="#experience">UX Wireframes</a>
         <a href="#education">Business & pitch</a>
@@ -68,11 +70,14 @@
   <section id="about" class="themushroomjournal">
     <div class="about">
       <div class="about-description">
-        <h2 style="color: #fff; margin: 30px 0;"></h2>
-        <p style="font-weight: 300; font-size: 1.1em;">The Mushroom Journal is a single-player 2D game about collecting
-          and documenting mushrooms.</p>
-        <div class="button-container" style="margin: 30px 0 0 0;"><a href="#contact" target="_blank"
-            class="button variant">Get the game <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+        <h3 style="color: #fff; margin: 30px 0; font-style: italic;">Welcome to Mush Meadows...</h3>
+        <p>Begin your life anew as a forager in a humble village in the middle of lush forests. Away from the bustling
+          city life, you shall rely on your trusty Mushroom Journal to help you make a cozy living. Can you learn to
+          spot all the different mushrooms and get to know your curious neighbors?</p>
+
+        <div class="double-button-wrapper" style="margin-top: 40px;">
+          <div class="button-container"><span class="ribbon">FREE</span><a href="#contact" class="button variant">Get the game
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
         </div>
       </div>
     </div>
@@ -86,14 +91,14 @@
         <div class="expertise-item">
           <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
           <h4>Product Owner</h4>
-          <p>I was responsible for defining the product vision, managing the product backlog, and ensuring the product
-            met user needs.</p>
+          <p>I was responsible for defining the game concept and vision, managing the product backlog and making sure
+            the game met its user needs.</p>
         </div>
         <div class="expertise-item">
           <i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i>
           <h4>Concepting</h4>
           <p>I created the core concept of the game based on my own personal experiences and interests in nature and
-            storytelling.</p>
+            cozy games.</p>
         </div>
         <div class="expertise-item">
           <i class="fa-solid fa-object-group" aria-hidden="true"></i>
@@ -101,16 +106,17 @@
           <p>Helping the UI designer, I designed the initial UX wireframe for the main guidebook feature of the game.
           </p>
         </div>
-        <div class="expertise-item">
+        <div class="expertise-item" style="margin-top: 20px;">
           <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
           <h4>Programming</h4>
-          <p>I was the lead programmer for the core gameplay systems and UI components of the game.</p>
+          <p>I was the lead programmer for the core gameplay systems and UI components of the game, as well as in charge
+            of file management and version control.</p>
         </div>
-        <div class="expertise-item">
+        <div class="expertise-item" style="margin-top: 20px;">
           <i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
           <h4>Business</h4>
-          <p>I was responsible for the business development, pitching events and creating pitch decks for different
-            audiences.
+          <p>I was responsible for the business development, creating pitch decks for different
+            audiences and presenting them audiovisually.
           </p>
         </div>
       </div>
@@ -119,25 +125,28 @@
 
   <section id="experience">
     <div class="experience">
-      <h2>UX Wireframing</h2>
+      <h2 style="margin-bottom: 40px;">UX Wireframing</h2>
       <div class="textfloatimage">
-        <div>
-          <h3>Modality</h3>
-          <p>I designed the wireframe with the intention to keep most elements grouped together, making the design
-            modal, meaning it is easier to cherry-pick parts of the design and move them around as groups for different
-            iterations of the design.</p>
-          <h3>Consistency</h3>
-          <p>Applying the Gestalt principle of cohesion, I made sure that all UI elements in the wireframe followed a
-            consistent design language, using the same spacing, typography and visual hierarchy in each respective
-            element group.</p>
-          <h3>Readability</h3>
-          <p>I ensured that all text in the wireframe was readable and legible, using appropriate font sizes and
-            contrast ratios.</p>
-        </div>
         <div><a href="/portfolioentries/images/mushroomjournal_UXwireframe.png" target="_blank"
             data-tooltip="Click to enlarge!" data-tooltip-location="bottom"><img
               src="/portfolioentries/images/mushroomjournal_UXwireframe.png" width="400px"
               alt="UX wireframe of the main guidebook feature of the game" /></a></div>
+        <div>
+          <h4>Modality</h4>
+          <p>I designed the wireframe with the intention to keep most elements grouped together, making the design
+            modal, meaning it is easier to cherry-pick parts of the design and move them around as groups. As I was not
+            the sole designer, I made sure to document and communicate the design decisions clearly to ensure
+            consistency across all iterations.</p>
+          <h4>Consistency</h4>
+          <p>Applying the Gestalt principle of cohesion, I made sure that all UI elements in the wireframe followed a
+            consistent design language, using the same spacing, typography and visual hierarchy in each respective
+            element group. Consistent design language helps the user understand the relationships between UI elements,
+            therefore reducing the cognitive load while playing - a key aspect of a cozy game experience.</p>
+          <h4>Readability</h4>
+          <p>I ensured that all text in the wireframe was readable and legible, using appropriate font sizes and
+            contrast ratios. Not only is the UX design easier to understand, but it also enhances the overall viewing
+            experience by reducing eye strain and improving accessibility.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -176,13 +185,14 @@
   <section id="contact">
     <div class="contact">
       <h2>Get the Game!</h2>
-      <p>You can get The Mushroom Journal for free on Steam!
-      </p>
+      <p>You can get The Mushroom Journal <u>for free</u> on Steam!</p>
 
       <div class="contacts">
         <div class="social_buttons_tua" style="text-align: center;">
-          <a data-tooltip="Steam" data-tooltip-location="bottom"
-            href="https://store.steampowered.com/app/4078260/The_Mushroom_Journal/" role="button" aria-label="Steam"><i
+          <a data-tooltip="Steam Store Page" data-tooltip-location="bottom"
+            href="https://store.steampowered.com/app/4078260/The_Mushroom_Journal/" role="button"
+            aria-label="Steam Store Page"
+            style="width: auto; padding: 0 20px; font-family:'Raleway',sans-serif; font-weight: 400;">STEAM &nbsp;<i
               class="fa-brands fa-steam"></i></a>
         </div>
       </div>
@@ -193,18 +203,15 @@
   </section>
 
   <footer>
-    <p>&copy; Tua Nylund 2025</p>
+    <p>Portfolio Material & Web Design &copy; Tua Nylund 2026</p>
   </footer>
-
-  <button class="scroll-button" id="scrollToggle" aria-label="Scroll to the bottom"><i
-      class="fas fa-chevron-down"></i></button>
 
   <script>
     // Reveal sections on scroll
     const sections = document.querySelectorAll('section');
 
     const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
+      const triggerBottom = window.innerHeight * 1;
 
       sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
