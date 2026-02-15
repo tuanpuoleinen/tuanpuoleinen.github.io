@@ -110,14 +110,14 @@ a {
 a:hover,
 a:focus,
 a:active {
-    color: var(--color-accent-1);
+    color: var(--color-accent-1-darker);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 p>a {
     color: var(--color-dark);
-    background-image: linear-gradient(var(--color-accent-1));
+    background-image: linear-gradient(var(--color-accent-1-darker));
     background-size: 0% 0.1em;
     background-position-y: 100%;
     background-position-x: 0%;
@@ -129,21 +129,84 @@ p>a {
 p>a:hover,
 p>a:focus,
 p>a:active {
-    background-size: 100% 2px;
+    background-size: 100% 1px;
     transition: all 0.3s ease-in-out;
 }
 
-code {
-    background: #f7f7f7;
-    border-radius: 0.35em;
-    border: solid 2px #efefef;
+.accordion-header {
+    background-color: var(--color-dark-lighter);
+    color: var(--bg-color);
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
     font-family: var(--font-code);
-    font-size: 0.9em;
-    margin: 0 0.25em;
-    padding: 0.25em 0.65em;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin: 20px 0 0 0;
 }
 
-.button, .button:focus, .button:active {
+.accordion-header:hover {
+    background-color: var(--color-dark-lighter);
+    padding-left: 28px;
+    transition: all 0.3s ease-in-out, border-radius 0.1s ease-in-out;
+}
+
+.accordion-header.active {
+    border-radius: 20px 20px 0 0;
+    padding-left: 28px;
+}
+
+.accordion-panel {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: max-height 0.2s ease-out;
+    border-radius: 0 0 20px 20px;
+}
+
+code {
+    background: rgba(10, 10, 10, 0.4);
+    border: none;
+    border-radius: none;
+    font-family: var(--font-code);
+    font-size: 0.95em;
+    display: block;
+    text-align: left;
+    padding: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+    overflow: auto;
+}
+
+code pre {
+    margin: 0;
+    padding: 20px;
+    font-size: 0.8em;
+    font-family: var(--font-code);
+}
+
+code::-webkit-scrollbar-track, code::-webkit-scrollbar {
+    background: transparent;
+    border-radius: 10px;
+    height: 10px;
+}
+
+code::-webkit-scrollbar-thumb {
+    background: var(--color-dark-lighter);
+    border-radius: 10px;
+}
+
+.button,
+.button:focus,
+.button:active {
     display: block;
     border-radius: 0px;
     font-family: var(--font2);
@@ -171,7 +234,9 @@ code {
     transition: all 0.3s ease-in-out;
 }
 
-.button.variant, .button.variant:focus, .button.variant:active  {
+.button.variant,
+.button.variant:focus,
+.button.variant:active {
     display: block;
     border-radius: 0px;
     letter-spacing: 2px;
@@ -194,20 +259,20 @@ code {
 }
 
 .ribbon {
-  width: 60px;
-  font-size: 0.8em;
-  font-weight: 600;
-  font-family: var(--font2);
-  padding: 4px;
-  position: absolute;
-  z-index: 10;
-  right: -25px;
-  top: -12px;
-  text-align: center;
-  border-radius: 25px;
-  transform: rotate(20deg);
-  background-color: peru;
-  color: white;
+    width: 60px;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: var(--font2);
+    padding: 4px;
+    position: absolute;
+    z-index: 10;
+    right: -25px;
+    top: -12px;
+    text-align: center;
+    border-radius: 25px;
+    transform: rotate(20deg);
+    background-color: peru;
+    color: white;
 }
 
 .double-button-wrapper {
@@ -320,7 +385,7 @@ header .social_buttons_tua_nav a {
 }
 
 header .social_buttons_tua_nav a:hover {
-    color: #000;
+    color: var(--color-accent-1-lighter);
 }
 
 @media screen and (max-width: 1200px) {
@@ -373,7 +438,7 @@ header .social_buttons_tua_nav a:hover {
     }
 
     .nav a:not(.icon):hover {
-        /*color: var(--color-accent-2);*/
+        color: var(--color-accent-1-lighter);
         padding-left: 10px;
         transition: all 0.3s ease-in-out;
         /*border-bottom: 2px solid rgba(255, 255, 255, 0.9);
@@ -535,10 +600,10 @@ body.themushroomjournal {
 
 @media (max-width: 1200px) {
     .textfloatimage {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 
     .textfloatimage p {
         margin: 20px 0;
@@ -665,7 +730,7 @@ section .works h2 {
     width: 100%;
     max-width: 9000px;
     margin: 0 auto;
-    
+
     transition: height 0.4s ease;
     position: relative;
 }
@@ -832,7 +897,8 @@ p.study-extra {
     font-style: italic;
 }
 
-p.study-extra span, p.study-extra a {
+p.study-extra span,
+p.study-extra a {
     color: var(--color-dark-lighter);
     font-style: italic;
 }

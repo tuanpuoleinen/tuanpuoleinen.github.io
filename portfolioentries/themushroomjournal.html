@@ -54,17 +54,6 @@
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
     </nav>
-    <!-- <div class="social_buttons_tua_nav">
-      <a data-tooltip="Email" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
-        aria-label="Email"><i class="fa-solid fa-at" aria-hidden="true"></i></a>
-      <a data-tooltip="Linktree" data-tooltip-location="top" href="https://linktr.ee/tuanylund" role="button"
-        aria-label="Linktree"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
-      <a data-tooltip="LinkedIn" data-tooltip-location="top" target="_blank"
-        href="https://www.linkedin.com/in/tuanylund/" role="top" aria-label="LinkedIn"><i
-          class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-      <a data-tooltip="GitHub" data-tooltip-location="top" target="_blank" href="https://github.com/tuanpuoleinen"
-        role="button" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-    </div> -->
   </header>
 
   <section id="about" class="themushroomjournal">
@@ -76,7 +65,8 @@
           spot all the different mushrooms and get to know your curious neighbors?</p>
 
         <div class="double-button-wrapper" style="margin-top: 40px;">
-          <div class="button-container"><span class="ribbon">FREE</span><a href="#contact" class="button variant smooth">Get the game
+          <div class="button-container"><span class="ribbon">FREE</span><a href="#contact"
+              class="button variant smooth">Get the game
               <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
         </div>
       </div>
@@ -178,7 +168,304 @@
   <section id="works">
     <div class="works">
       <h2>Programming</h2>
+      <p>As the lead programmer, I was responsible for implementing core game mechanics and systems in Unity. As this
+        project was my first major project in Unity, I learned a lot about the engine's architecture and how to
+        structure code for maintainability and scalability. I struggled with managing the complexity of the codebase and
+        ensuring that it was easy to maintain and extend, as the scope of the project grew - I luckily got help from
+        senior developers who helped me extend my knowledge and skills in Unity development. A few of my key
+        contributions include:</p>
+      <button class="accordion-header">Mushroom Data</button>
+      <div class="accordion-panel">
+        <p style="margin: 20px;">I created the MushroomData scriptable object for each type of mushroom for easy storing
+          of information about the mushrooms. I learned
+          how to use ScriptableObjects in Unity to store and manage data for different mushroom types, including their
+          rarity, spawn locations, and visual properties. In addition to the execution of code, I learned more about the
+          Unity Engine and how to format the Inspector window to display the data in a user-friendly way. Adding headers
+          and descriptions to the Inspector window made it easier for the artists and game designers to also understand
+          and modify the data, making my workload lighter for implementation tasks.</p>
+        <code>
+            <pre style="color: rgb(201, 209, 217);font-weight: 400; "><span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> UnityEngine;
 
+<span style="color: rgb(139, 148, 158); font-weight: 400;">// mushroom rarity levels enumeration</span>
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> Rarity { Common = <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>, Uncommon = <span style="color: rgb(121, 192, 255); font-weight: 400;">2</span>, Rare = <span style="color: rgb(121, 192, 255); font-weight: 400;">3</span>, Epic = <span style="color: rgb(121, 192, 255); font-weight: 400;">4</span>, Legendary = <span style="color: rgb(121, 192, 255); font-weight: 400;">5</span> }
+
+<span style="color: rgb(139, 148, 158); font-weight: 400;">// different locations where mushrooms can spawn</span>
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> SpawnLocation { DryWoods, WetWoods, FallenTree, Clearing, Meadow, Swamp, Cave, BirchTrees, SpruceTrees, Chanterelle }
+
+<span style="color: rgb(139, 148, 158); font-weight: 400;">// seasons affecting mushroom spawning</span>
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> Season { Spring, Summer, Fall, Winter }
+ 
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> CapType { None, RoughEdged, SmoothEdged, ConeShaped, Flat, OvalLike }
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> GillType { Gills, Pores, Teeth, Smooth }
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">enum</span> StemType { Long, Short, Volva, Ring }
+
+[<span style="color: rgb(121, 192, 255); font-weight: 400;">CreateAssetMenu(menuName = <span style="color: rgb(165, 214, 255); font-weight: 400;">"Mushrooms/New Mushroom"</span>)</span>]
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">class</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">MushroomData</span> : <span style="color: rgb(210, 168, 255); font-weight: 400;">ScriptableObject</span>
+{
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"General Info"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">string</span> mushroomName;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">string</span> mushroomScientificName;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">TextArea</span>]
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Tooltip(<span style="color: rgb(165, 214, 255); font-weight: 400;">"What to show in the guide book entry for this mushroom. \"</span>This mushroom is this and that\<span style="color: rgb(165, 214, 255); font-weight: 400;">""</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">string</span> mushroomInfo;
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">TextArea</span>]
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Tooltip(<span style="color: rgb(165, 214, 255); font-weight: 400;">"What to show in the checklist entry for the mushroom. \"</span>This mushroom is this and that\<span style="color: rgb(165, 214, 255); font-weight: 400;">""</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">string</span> mushroomShortInfo;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Sprites"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Sprite worldSprite;   <span style="color: rgb(139, 148, 158); font-weight: 400;">// shown in the world map</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Sprite displaySprite; <span style="color: rgb(139, 148, 158); font-weight: 400;">// shown in checklist page UI</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Sprite sketchSprite;  <span style="color: rgb(139, 148, 158); font-weight: 400;">// shown in mushroom page UI</span>
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Properties"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">bool</span> isEdible;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">bool</span> isPoisonous;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Identification Traits"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> CapType[] capTraits;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GillType[] gillTraits;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> StemType[] stemTraits;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Economy Settings"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">int</span> marketValue;
+    <span style="color: rgb(139, 148, 158); font-weight: 400;">// public int penaltyValue;</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">int</span> blackMarketValue;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Spawn Settings"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Rarity rarity = Rarity.Common;   <span style="color: rgb(139, 148, 158); font-weight: 400;">// controls how rare this mushroom is</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> SpawnLocation[] spawnLocations;  <span style="color: rgb(139, 148, 158); font-weight: 400;">// locations where this mushroom can spawn</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Season[] spawnSeasons;           <span style="color: rgb(139, 148, 158); font-weight: 400;">// seasons when this mushroom can spawn</span>
+}
+</pre>
+          </code>
+      </div>
+
+      <button class="accordion-header">Mushroom Spawner</button>
+      <div class="accordion-panel">
+        <p style="margin: 20px;">I created the logic for spawning mushrooms in the game. The spawner is responsible for
+          placing mushrooms in specific locations based on the current season and location type. The spawner uses a
+          function, <i>ChooseMushroom</i>, to create a weighted list of spawning candidate mushrooms based on rarity,
+          and the list is then used to select a random mushroom for the specific spawn point. Each spawn point has its
+          own spawn location and spawn chance percentage that affects the spawning probability.</p>
+        <code>
+          <pre style="color: rgb(201, 209, 217); font-weight: 400; "><span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> System.Collections.Generic;
+<span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> UnityEngine;
+
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">class</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">MushroomSpawner</span> : <span style="color: rgb(210, 168, 255); font-weight: 400;">MonoBehaviour</span>
+{
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Spawner Settings"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GameObject mushroomPrefab; <span style="color: rgb(139, 148, 158); font-weight: 400;">// prefab for the mushroom with MushroomInteractable and SpriteRenderer</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> MushroomData[] allMushrooms; <span style="color: rgb(139, 148, 158); font-weight: 400;">// array of all possible mushroom types</span>
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Transform[] spawnPoints; <span style="color: rgb(139, 148, 158); font-weight: 400;">// points where mushrooms can spawn</span>
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">Start</span>()</span>
+    {
+        SpawnMushrooms();
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">SpawnMushrooms</span>()</span>
+    {
+        Debug.Log(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Spawner running at "</span> + gameObject.name);
+
+        Season currentSeason = GameManager.Instance.currentSeason; <span style="color: rgb(139, 148, 158); font-weight: 400;">// get current season from GameManager</span>
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">foreach</span> (Transform point <span style="color: rgb(255, 123, 114); font-weight: 400;">in</span> spawnPoints)
+        {
+            SpawnPoint sp = point.GetComponent&lt;SpawnPoint&gt;();
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (sp == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>) <span style="color: rgb(255, 123, 114); font-weight: 400;">continue</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">// ensure the spawn point has a SpawnPoint component</span>
+
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (Random.<span style="color: rgb(255, 123, 114); font-weight: 400;">value</span> &lt;= sp.spawnChance) <span style="color: rgb(139, 148, 158); font-weight: 400;">// check spawn chance from SpawnPoint</span>
+            {
+                <span style="color: rgb(139, 148, 158); font-weight: 400;">// loop through all locationTypes for this spawn point</span>
+                <span style="color: rgb(255, 123, 114); font-weight: 400;">foreach</span> (<span style="color: rgb(255, 123, 114); font-weight: 400;">var</span> locationType <span style="color: rgb(255, 123, 114); font-weight: 400;">in</span> sp.locationTypes)
+                {
+                    MushroomData chosenData = ChooseMushroom(locationType, currentSeason); <span style="color: rgb(139, 148, 158); font-weight: 400;">// pass each location type</span>
+                    <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (chosenData != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+                    {
+                        GameObject mushroom = Instantiate(mushroomPrefab, point.position, Quaternion.identity); <span style="color: rgb(139, 148, 158); font-weight: 400;">// spawn the mushroom</span>
+                        MushroomInteractable interactable = mushroom.GetComponent&lt;MushroomInteractable&gt;(); <span style="color: rgb(139, 148, 158); font-weight: 400;">// assign data to the interactable</span>
+
+                        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (interactable != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+                            interactable.data = chosenData; <span style="color: rgb(139, 148, 158); font-weight: 400;">// assign the chosen mushroom data</span>
+
+                        SpriteRenderer sr = mushroom.GetComponent&lt;SpriteRenderer&gt;(); <span style="color: rgb(139, 148, 158); font-weight: 400;">// set the sprite</span>
+                        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (sr != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+                            sr.sprite = chosenData.worldSprite;
+                        <span style="color: rgb(255, 123, 114); font-weight: 400;">break</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">// spawn only one mushroom per spawn point</span>
+                    }
+                }
+            }
+        }
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;">MushroomData <span style="color: rgb(210, 168, 255); font-weight: 400;">ChooseMushroom</span>(<span style="color: rgb(201, 209, 217); font-weight: 400;">SpawnLocation location, Season season</span>)</span>
+    {
+        List&lt;MushroomData&gt; candidates = <span style="color: rgb(255, 123, 114); font-weight: 400;">new</span> List&lt;MushroomData&gt;();
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">foreach</span> (MushroomData data <span style="color: rgb(255, 123, 114); font-weight: 400;">in</span> allMushrooms) <span style="color: rgb(139, 148, 158); font-weight: 400;">// filter mushrooms based on location, season, and rarity</span>
+        {
+            <span style="color: rgb(255, 166, 87); font-weight: 400;">bool</span> validLocation = System.Array.Exists(data.spawnLocations, l =&gt; l == location);
+            <span style="color: rgb(255, 166, 87); font-weight: 400;">bool</span> validSeason = System.Array.Exists(data.spawnSeasons, s =&gt; s == season);
+
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (validLocation &amp;&amp; validSeason)
+            {
+                <span style="color: rgb(255, 166, 87); font-weight: 400;">int</span> weight = (<span style="color: rgb(255, 166, 87); font-weight: 400;">int</span>)Rarity.Legendary + <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span> - (<span style="color: rgb(255, 166, 87); font-weight: 400;">int</span>)data.rarity;
+                <span style="color: rgb(255, 123, 114); font-weight: 400;">for</span> (<span style="color: rgb(255, 166, 87); font-weight: 400;">int</span> i = <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>; i &lt; weight; i++) <span style="color: rgb(139, 148, 158); font-weight: 400;">// add multiple entries for higher rarity (the weighted list thingy)</span>
+                    candidates.Add(data);
+            }
+        }
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (candidates.Count == <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>) <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>;
+
+        <span style="color: rgb(255, 166, 87); font-weight: 400;">int</span> index = Random.Range(<span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>, candidates.Count);
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span> candidates[index]; <span style="color: rgb(139, 148, 158); font-weight: 400;">// return a random mushroom [index] from the weighted candidates</span>
+    }
+}
+
+<span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> UnityEngine;
+<span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> System.Collections.Generic;
+
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">class</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">SpawnPoint</span> : <span style="color: rgb(210, 168, 255); font-weight: 400;">MonoBehaviour</span>
+{
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">SerializeField</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> List&lt;SpawnLocation&gt; locationTypes = <span style="color: rgb(255, 123, 114); font-weight: 400;">new</span> List&lt;SpawnLocation&gt;(); <span style="color: rgb(139, 148, 158); font-weight: 400;">// types of locations this spawn point can represent</span>
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Range(0f, 1f)</span>] <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 166, 87); font-weight: 400;">float</span> spawnChance = <span style="color: rgb(121, 192, 255); font-weight: 400;">0.5f</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">// chance of spawning a mushroom at this point</span>
+}
+</pre>
+        </code>
+      </div>
+
+      <button class="accordion-header">UI Manager</button>
+      <div class="accordion-panel">
+        <p style="margin: 20px;">The UIManager handles the main functionalities' UI functionalities, such as populating
+          the inspection panel's checklists, handling what Pick and Leave buttons do, as well as displaying basket and
+          warning texts on the screen.</p>
+        <code>
+<pre style="color: rgb(201, 209, 217); font-weight: 400; "><span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> UnityEngine;
+<span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> UnityEngine.UI;
+<span style="color: rgb(255, 123, 114); font-weight: 400;">using</span> TMPro;
+
+<span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">class</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">UIManager</span> : <span style="color: rgb(210, 168, 255); font-weight: 400;">MonoBehaviour</span>
+{
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">static</span> UIManager Instance;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Inspection UI"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GameObject inspectionPanel;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> Image displayImage;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GuidebookUI guidebookUI;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Checklist Sections"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GameObject capSection;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GameObject gillsSection;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> GameObject stemSection;
+
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">Header(<span style="color: rgb(165, 214, 255); font-weight: 400;">"Inventory UI"</span>)</span>]
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> TextMeshProUGUI basketCountText; <span style="color: rgb(139, 148, 158); font-weight: 400;">// Basket count display</span>
+
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">private</span> GameObject currentMushroomObject;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">private</span> MushroomData currentMushroomData;
+    [<span style="color: rgb(121, 192, 255); font-weight: 400;">SerializeField</span>] <span style="color: rgb(255, 123, 114); font-weight: 400;">private</span> PlayerController playerController;
+    <span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> TextMeshProUGUI warningText;
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">Awake</span>()</span>
+    {
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (Instance == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>) Instance = <span style="color: rgb(255, 123, 114); font-weight: 400;">this</span>;
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">else</span> Destroy(gameObject);
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (playerController == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+        {
+            playerController = FindFirstObjectByType&lt;PlayerController&gt;();   <span style="color: rgb(139, 148, 158); font-weight: 400;">// find player controller in scene if not assigned</span>
+        }
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">OpenInspection</span>(<span style="color: rgb(201, 209, 217); font-weight: 400;">MushroomData data, GameObject mushroomObject</span>)</span>
+    {
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (data == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+        {
+            Debug.LogError(<span style="color: rgb(165, 214, 255); font-weight: 400;">"UIManager.OpenInspection: data is null!"</span>);
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span>;
+        }
+
+        currentMushroomData = data;
+        currentMushroomObject = mushroomObject;
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (displayImage != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span> &amp;&amp; data.displaySprite != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+            displayImage.sprite = data.displaySprite;
+
+        inspectionPanel.SetActive(<span style="color: rgb(121, 192, 255); font-weight: 400;">true</span>);
+
+        PopulateChecklist(capSection, currentMushroomData.capTraits);
+        PopulateChecklist(gillsSection, currentMushroomData.gillTraits);
+        PopulateChecklist(stemSection, currentMushroomData.stemTraits);
+
+        guidebookUI.SetupGuidebook(data);
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">OnPickButton</span>()</span>
+    {
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (currentMushroomObject == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span> || currentMushroomData == <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+        {
+            CloseInspection();
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span>;
+        }
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (!guidebookUI.IsSureMushroomIs(currentMushroomData))
+        {
+            guidebookUI.ShowUnsureMessage();
+            currentMushroomObject.GetComponent&lt;MushroomInteractable&gt;().Interactable = <span style="color: rgb(121, 192, 255); font-weight: 400;">false</span>;
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span>;
+        }
+
+        <span style="color: rgb(139, 148, 158); font-weight: 400;">// if correct, increment identification count (insta-pick feature)</span>
+        GameManager.Instance.playerData.IncrementIdentification(currentMushroomData.mushroomName);
+
+        <span style="color: rgb(255, 166, 87); font-weight: 400;">bool</span> picked = <span style="color: rgb(121, 192, 255); font-weight: 400;">true</span>;
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (InventoryManager.Instance != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+        {
+            picked = InventoryManager.Instance.AddMushroom(currentMushroomData);
+        }
+
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (!picked)
+        {
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">return</span>;
+        }
+
+        Destroy(currentMushroomObject);
+        CloseInspection();
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">public</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">OnLeaveButton</span>()</span> =&gt; CloseInspection();
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">private</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">CloseInspection</span>()</span>
+    {
+        currentMushroomObject = <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>;
+        currentMushroomData = <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>;
+        inspectionPanel.SetActive(<span style="color: rgb(121, 192, 255); font-weight: 400;">false</span>);
+
+        PlayerController.CanMove = <span style="color: rgb(121, 192, 255); font-weight: 400;">true</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">// re-enable player movement</span>
+    }
+
+    <span style="color: rgb(201, 209, 217); font-weight: 400;"><span style="color: rgb(255, 123, 114); font-weight: 400;">private</span> <span style="color: rgb(255, 123, 114); font-weight: 400;">void</span> <span style="color: rgb(210, 168, 255); font-weight: 400;">PopulateChecklist</span>&lt;<span style="color: rgb(210, 168, 255); font-weight: 400;">T</span>&gt;(<span style="color: rgb(201, 209, 217); font-weight: 400;">GameObject section, T[] traits</span>) <span style="color: rgb(255, 123, 114); font-weight: 400;">where</span> T : System.Enum</span>
+    {
+        <span style="color: rgb(255, 123, 114); font-weight: 400;">foreach</span> (Toggle toggle <span style="color: rgb(255, 123, 114); font-weight: 400;">in</span> section.GetComponentsInChildren&lt;Toggle&gt;())
+        {
+            TMP_Text label = toggle.GetComponentInChildren&lt;TMP_Text&gt;();
+            <span style="color: rgb(255, 123, 114); font-weight: 400;">if</span> (label != <span style="color: rgb(121, 192, 255); font-weight: 400;">null</span>)
+            {
+                toggle.isOn = System.Array.Exists(traits, trait =&gt; trait.ToString() == label.text); <span style="color: rgb(139, 148, 158); font-weight: 400;">// match trait to toggle label</span>
+            }
+        }
+    }
+}
+</pre>
+        </code>
+      </div>
+      <button class="accordion-header">Class Diagram</button>
+      <div class="accordion-panel">
+        <p style="margin: 20px;">I learned how to create a class diagram for The Mushroom Journal's game systems, which helped me visualize the relationships between different components and their responsibilities. The key takeaway was understanding how to map out dependencies and responsibilities in a game system - which turned out a lot more complex than I initially thought. This class chart does not fully represent all the relationships in the game (nor does it include the outsourced code), but it was a good starting point for understanding the architecture.</p>
+        <a data-tooltip="Click to enlarge!" data-tooltip-location="bottom" href="/portfolioentries/images/themushroomjournal_classchart.png"><img src="/portfolioentries/images/themushroomjournal_classchart.png" alt="Class diagram for The Mushroom Journal" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;"></a>
+      </div>
     </div>
   </section>
 
@@ -346,6 +633,21 @@
       });
     });
 
+    // accordion
+    var acc = document.getElementsByClassName("accordion-header");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
   </script>
 
 </body>
