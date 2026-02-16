@@ -541,6 +541,23 @@ header .social_buttons_tua_nav a:hover {
     }
 }
 
+    .nav-links a.nav-back {
+        font-size: 0.7em;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .nav-links a.nav-back i {
+        font-size: 0.7em;
+        margin-right: 10px;
+        float: left;
+        line-height: 1.9;
+    }
+
+    .nav-responsive .nav-links a.nav-back {
+        margin-top: 0;
+    }
+
 /* PORTFOLIO ENTRIES HEADERS */
 
 body.themushroomjournal {
