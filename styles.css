@@ -640,6 +640,21 @@ body.themushroomjournal {
     }
 }
 
+.learning h4 {
+    margin: 20px 0;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.learning ul {
+    margin-left: 20px;
+}
+
+.learning ul li {
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
 /* EXPERTISES */
 
 .expertise-list {
