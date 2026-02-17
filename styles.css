@@ -578,7 +578,7 @@ body.themushroomjournal {
     background-image: url('/portfolioentries/images/themushroomjournal_large_tinted.png');
     background-size: cover;
     background-position: 5% 0%;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 @media (max-width: 1200px) {
@@ -596,18 +596,13 @@ body.themushroomjournal {
 }
 
 .portrait.themushroomjournal img {
-    width: 190px;
+    width: 170px;
     height: auto;
     border-radius: 0px;
 }
 
-.themushroomjournal .nav-links a.back-link{
-    margin-top: 10px;
-    letter-spacing: 0;
-    font-weight: 700;
-    text-transform: lowercase;
-    font-family: var(--font-code);
-    font-size: 0.8em;
+.themushroomjournal .nav-links a {
+    font-size: 1.1em;
 }
 
 .textfloatimage h4 {
