@@ -601,6 +601,16 @@ body.themushroomjournal {
     border-radius: 0px;
 }
 
+.themushroomjournal .nav button.button{
+    margin-top: 20px;
+    letter-spacing: 0;
+    font-weight: 700;
+    text-transform: lowercase;
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    padding: 5px 10px;
+}
+
 .textfloatimage h4 {
     margin: 20px 0;
 }
