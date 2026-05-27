@@ -721,6 +721,89 @@ section .works h2 {
     margin-bottom: 40px;
 }
 
+.works .works-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.works .works-cards .work-card {
+    background-color: var(--bg-color);
+    border-radius: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    color: var(--text-color);
+    position: relative;
+}
+
+.works .works-cards .card-container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.works .works-cards .card-container h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.works .works-cards .card-container p {
+    line-height: 1.6;
+}
+
+.works .works-cards .work-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0px;
+}
+
+.works .works-cards .work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.works .works-cards .work-card .card-badges {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.works .works-cards .work-card .card-badges img {
+    width: auto;
+    height: 36px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.works .works-cards .work-card a.button {
+    position: absolute;
+    display: block;
+    width: auto;
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+}
+
+.works .works-cards .work-card a.button + p {
+    margin-bottom: 70px;
+}
+
+@media (max-width: 1300px) {
+    .works .works-cards {
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+    .works .works-cards .work-card .card-badges {
+        display: none;
+    }
+}
+
+/*****/
+
 .controls {
     margin-bottom: 20px;
     display: flex;
