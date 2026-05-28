@@ -118,7 +118,7 @@ a:active {
 p>a {
     color: var(--color-dark);
     background-image: linear-gradient(var(--color-accent-1-darker));
-    background-size: 0% 0.1em;
+    background-size: 0% 1px;
     background-position-y: 100%;
     background-position-x: 0%;
     background-repeat: no-repeat;
@@ -327,7 +327,7 @@ code::-webkit-scrollbar-thumb {
 
 a.emaillink {
     display: inline-block;
-    margin: 30px 0;
+    margin: 20px 0;
     font-weight: 600;
 }
 
@@ -363,15 +363,15 @@ header h2 {
 }
 
 header .portrait img {
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
     border-radius: 50%;
 }
 
 header .about-description {
     font-size: 1em;
     font-weight: 300;
-    margin: 15px 0 15px 0;
+    margin: 15px 50px 15px 0;
 }
 
 header .social_buttons_tua_nav {
@@ -790,7 +790,7 @@ section .works h2 {
     margin-bottom: 70px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
     .works .works-cards {
         grid-template-columns: 1fr;
         width: 100%;
