@@ -881,6 +881,10 @@ footer {
     box-sizing: border-box;
 }
 
+.container404 {
+    font-family: var(--font2);
+}
+
 .container404 h1 {
     color: var(--color-accent-1);
     font-weight: normal;
