@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art & Illustrations - Tua Nylund</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <meta name="title" content="The Mushroom Journal - Tua Nylund">
+    <meta name="description"
+        content="Explore the creative portfolio and professional resume of Tua Nylund, a Junior Developer and Visual Designer from Jyväskylä, Finland.">
+    <meta name="keywords"
+        content="portfolio, tua, nylund, art, illustrations, tua nylund, bba, bachelor, game developer, game designer, game production, game, video game, graphics, UI, UX, user experience, interface, designer, frontend developer, frontend, developer">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="30 days">
+    <meta name="author" content="Tua Nylund">
+    <meta property="og:image" content="https://tuanpuoleinen.github.io/SEO_banner_tuanylund.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+</head>
+
+<body>
+    <header id="intro">
+        <div class="portrait">
+            <img src="/images/tua_square.jpg" alt="Tua Nylund" />
+        </div>
+        <nav class="nav" id="topNav" aria-label="Main navigation">
+            <div class="nav-links">
+                <a href="#intro" class="nav-home">Introduction</a>
+                <a href="#works">Gallery</a>
+            </div>
+            <button href="javascript:void(0);" class="icon" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-links" onclick="respNav()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about">
+            <div class="about-description">
+                <h3 style="margin: 30px 0;">My Art and Illustrations</h3>
+                <p style="text-align: center;">While short, I feel like my art and illustrations gallery strongly depicts my strengths in digital art. I have a basic understanding of color theory and composition, but I have yet to develop a more advanced style.</p>
+
+                <div class="double-button-wrapper" style="margin-top: 40px;">
+                    <div class="button-container"><a href="#works" class="button smooth">View the Gallery
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <div class="works">
+            <div class="works-cards">
+                <div class="work-card" style="position: relative;">
+                    <a href="/images/portfolio/gallery/lunarwoodsconceptart.jpg" target="_blank">
+                        <img src="/images/portfolio/digitalpainting_cardheader.png" alt="Digital painting of a forest landscape" />
+                    </a>
+                    <div class="card-container">
+                        <h3>World Concept Art</h3>
+                        <p>I created this digital painting as a part of the world concept art for a fantasy game project in 2024 during my studies at JAMK University of Applied Sciences. Drawn using a regular mouse in Adobe Photoshop.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <a href="/images/portfolio/avatar_thumb.png" target="_blank">
+                        <img src="/images/portfolio/gallery/avatar_cover.png" alt="A digital illustration of a K-9 dog" />
+                    </a>
+                    <div class="card-container">
+                        <h3>K-9 Avatar</h3>
+                        <p>A cartoonish illustration of a police K-9 dog. Painted in 2024 using Adobe Illustrator for a course in Game Art at JAMK University of Applied Sciences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p style="line-height: 2.0;"><a href="https://tuanpuoleinen.github.io/index.html"
+                style="color: var(--color-accent-1);"><i class="fas fa-chevron-left" style="font-size:0.9em;"></i>&nbsp;
+                Back to
+                Portfolio</a><br />
+            Portfolio Material & Web Design &copy; Tua Nylund 2026</p>
+    </footer>
+
+    <script>
+        // Reveal sections on scroll
+        const sections = document.querySelectorAll('section');
+
+        const revealOnScroll = () => {
+            const triggerBottom = window.innerHeight * 1;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('revealed');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scrolling
+        document.querySelectorAll('nav a, a.button.smooth').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll button
+        const scrollBtn = document.getElementById('scrollToggle');
+        const icon = scrollBtn ? scrollBtn.querySelector('i') : null;
+
+        if (scrollBtn && icon) {
+            scrollBtn.addEventListener('click', () => {
+                const scrollTop = window.scrollY;
+                const about = document.getElementById('about');
+                if (!about) return;
+                const aboutTop = about.offsetTop - 50;
+
+                if (scrollTop < aboutTop - 20) {
+                    window.scrollTo({ top: aboutTop, behavior: 'smooth' });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const about = document.getElementById('about');
+                if (!about) return;
+                const aboutTop = about.offsetTop - 50;
+
+                if (scrollTop < aboutTop - 20) {
+                    icon.className = 'fas fa-chevron-down';
+                    scrollBtn.classList.add('show');
+                } else {
+                    icon.className = 'fas fa-chevron-up';
+                    scrollBtn.classList.add('show');
+                }
+            });
+
+            window.addEventListener('load', () => {
+                scrollBtn.classList.add('show');
+            });
+        }
+
+        // Responsive nav
+        function respNav() {
+            const nav = document.getElementById("topNav");
+            if (!nav) return;
+
+            const button = nav.querySelector(".icon");  // now a <button>
+            const icon = button.querySelector("i");
+            const navLinks = nav.querySelector(".nav-links");
+
+            // Toggle menu
+            const isResponsive = nav.classList.toggle("responsive");
+
+            if (icon) {
+                if (isResponsive) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.add("fa-xmark");
+
+                    // Accessibility attributes when opened
+                    button.setAttribute("aria-expanded", "true");
+                    button.setAttribute("aria-label", "Close menu");
+                    navLinks.setAttribute("aria-hidden", "false");
+
+                } else {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+
+                    // Accessibility attributes when closed
+                    button.setAttribute("aria-expanded", "false");
+                    button.setAttribute("aria-label", "Open menu");
+                    navLinks.setAttribute("aria-hidden", "true");
+                }
+            }
+        }
+
+        // MixItUp
+        document.addEventListener('DOMContentLoaded', () => {
+            const containerEl = document.querySelector('#gallery');
+            if (containerEl && window.mixitup) {
+                var mixer = mixitup(containerEl, {
+                    animation: {
+                        enable: true,
+                        effects: 'fade translateZ(-100px)',
+                        duration: 500,
+                        animateResizeContainer: true,
+                        animateResizeTargets: true,
+                        nudge: true
+                    }
+                });
+
+                const controls = document.querySelectorAll('.controls button');
+                controls.forEach(button => {
+                    button.addEventListener('click', () => {
+                        controls.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                    });
+                });
+            }
+        });
+
+        // skillbars
+
+        jQuery(document).ready(function () {
+            jQuery('.skillbar').each(function () {
+                jQuery(this).find('.skillbar-bar').animate({
+                    width: jQuery(this).attr('data-percent')
+                }, 3000);
+            });
+        });
+
+        // accordion
+        var acc = document.getElementsByClassName("accordion-header");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
